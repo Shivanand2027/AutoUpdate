@@ -3,37 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Calculator</title>
+    <title>The Cozy Corner Cafe</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" class="calculator-display" value="0" disabled>
-        <div class="calculator-buttons">
-            <button class="operator" data-action="clear">AC</button>
-            <button class="operator" data-action="delete">&larr;</button>
-            <button class="operator" data-action="divide">&divide;</button>
-            <button class="operator" data-action="multiply">&times;</button>
-
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button class="operator" data-action="subtract">-</button>
-
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button class="operator" data-action="add">+</button>
-
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button class="decimal" data-action="decimal">.</button>
-
-            <button class="zero">0</button>
-            <button class="equal-sign" data-action="calculate">=</button>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo"><a href="#">Cozy Corner Cafe</a></h1>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
-    </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Start Your Day Right</h2>
+            <p>Experience the finest coffee and delicious pastries in a cozy atmosphere.</p>
+            <a href="#menu" class="btn">View Our Menu</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-us">
+        <div class="container">
+            <h3>Our Story</h3>
+            <p>The Cozy Corner Cafe was born from a passion for great coffee and a desire to create a warm, inviting space for our community. We source the finest beans from sustainable farms and bake our pastries fresh daily, ensuring every visit is a delightful experience.</p>
+            <p>Come in, relax, and let us make your day a little brighter.</p>
+        </div>
+    </section>
+
+    <section id="menu" class="our-menu">
+        <div class="container">
+            <h3>Our Delicious Offerings</h3>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h4>Espresso</h4>
+                    <p>Rich, intense, and perfectly extracted.</p>
+                    <span class="price">$3.50</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Latte</h4>
+                    <p>Smooth espresso with steamed milk and a delicate foam.</p>
+                    <span class="price">$4.75</span>
+                }
+                <div class="menu-item">
+                    <h4>Cappuccino</h4>
+                    <p>Classic Italian coffee with equal parts espresso, milk, and foam.</p>
+                    <span class="price">$4.75</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Croissant</h4>
+                    <p>Flaky, buttery, and baked to perfection.</p>
+                    <span class="price">$3.00</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Blueberry Muffin</h4>
+                    <p>Soft and moist, packed with fresh blueberries.</p>
+                    <span class="price">$3.25</span>
+                }
+                <div class="menu-item">
+                    <h4>Cheesecake</h4>
+                    <p>Creamy and decadent, a perfect sweet treat.</p>
+                    <span class="price">$6.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-us">
+        <div class="container">
+            <h3>Visit Us</h3>
+            <p>We'd love to see you! Find us at:</p>
+            <address>
+                123 Cafe Street, Suite 101<br>
+                Cityville, CA 90210
+            </address>
+            <p><strong>Opening Hours:</strong></p>
+            <ul>
+                <li>Monday - Friday: 7:00 AM - 6:00 PM</li>
+                <li>Saturday: 8:00 AM - 5:00 PM</li>
+                <li>Sunday: 8:00 AM - 4:00 PM</li>
+            </ul>
+            <p><strong>Phone:</strong> (123) 456-7890</p>
+            <p><strong>Email:</strong> <a href="mailto:info@cozycornercafe.com">info@cozycornercafe.com</a></p>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2023 Cozy Corner Cafe. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
     <script src="script.js" defer></script>
 </body>
 </html>
