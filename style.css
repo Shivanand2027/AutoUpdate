@@ -1,90 +1,388 @@
-body {
+/* General Body & Typography */
+:root {
+    --primary-color: #A0522D; /* Sienna */
+    --secondary-color: #D2B48C; /* Tan */
+    --accent-color: #5F4B3C; /* Darker Brown */
+    --text-color-dark: #333;
+    --text-color-light: #f4f4f4;
+    --bg-light: #FDF5E6; /* Old Lace */
+    --bg-dark: #3E2723; /* Dark Brown */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+* {
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f0f2f5;
-    font-family: 'Arial', sans-serif;
-}
-
-.calculator {
-    background-color: #333;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    width: 320px;
-}
-
-.calculator-display {
-    width: calc(100% - 20px);
-    height: 60px;
-    background-color: #222;
-    color: #fff;
-    font-size: 2.5em;
-    text-align: right;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.calculator-buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-color-dark);
+    background-color: var(--bg-light);
+    overflow-x: hidden;
 }
 
-.calculator-buttons button {
-    width: 100%;
-    height: 60px;
-    background-color: #555;
-    color: #fff;
-    border: none;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+h2 { font-size: 2.8em; }
+h3 { font-size: 2.2em; }
+h4 { font-size: 1.6em; }
+
+p {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 12px 25px;
     border-radius: 5px;
-    font-size: 1.5em;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Header */
+.main-header {
+    background-color: var(--bg-dark);
+    color: var(--text-color-light);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo {
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.main-header .logo a {
+    color: var(--text-color-light);
+    font-family: var(--font-heading);
+    white-space: nowrap; /* Prevent logo from breaking */
+}
+
+.main-header .logo a:hover {
+    color: var(--secondary-color);
+}
+
+.main-nav .nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav .nav-list li {
+    margin-left: 30px;
+}
+
+.main-nav .nav-list a {
+    color: var(--text-color-light);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.main-nav .nav-list a:hover {
+    color: var(--secondary-color);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
     cursor: pointer;
-    transition: background-color 0.2s;
+    z-index: 1001;
 }
 
-.calculator-buttons button:hover {
-    background-color: #777;
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color-light);
+    margin: 4px 0;
+    transition: all 0.3s ease-in-out;
 }
 
-.calculator-buttons button.operator {
-    background-color: #f79232;
+/* Hero Section */
+.hero {
+    background: url('https://via.placeholder.com/1920x800/8B4513/FFFFFF?text=Coffee+Shop+Hero') no-repeat center center/cover; /* Saddle Brown background */
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 100px 0;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-.calculator-buttons button.operator:hover {
-    background-color: #f7a14c;
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
 }
 
-.calculator-buttons button.equal-sign {
-    background-color: #4CAF50;
-    grid-column: span 2; /* Span two columns */
+.hero .container {
+    position: relative;
+    z-index: 1;
 }
 
-.calculator-buttons button.equal-sign:hover {
-    background-color: #61b164;
+.hero h2 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: var(--text-color-light);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-.calculator-buttons button.zero {
-    grid-column: span 1; /* Keep 0 button single column, adjust if needed for layout */
+.hero p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    color: var(--text-color-light);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-/* Adjustments for specific buttons */
-.calculator-buttons button[data-action="clear"] {
-    background-color: #d9534f;
-}
-.calculator-buttons button[data-action="clear"]:hover {
-    background-color: #e06c68;
+/* Sections Common Styling */
+section {
+    padding: 80px 0;
+    text-align: center;
 }
 
-.calculator-buttons button[data-action="delete"] {
-    background-color: #f0ad4e;
-}
-.calculator-buttons button[data-action="delete"]:hover {
-    background-color: #f2b968;
+section:nth-of-type(odd) {
+    background-color: var(--bg-light);
 }
 
+section:nth-of-type(even) {
+    background-color: #fff;
+}
+
+
+/* About Us Section */
+.about-us .container {
+    max-width: 800px;
+}
+
+.about-us p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Our Menu Section */
+.our-menu {
+    background-color: var(--secondary-color);
+    color: var(--text-color-dark);
+}
+
+.our-menu h3 {
+    color: var(--bg-dark);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.menu-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    color: #666;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+}
+
+.menu-item .price {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: var(--accent-color);
+}
+
+/* Contact Us Section */
+.contact-us address,
+.contact-us ul {
+    font-style: normal;
+    margin-bottom: 20px;
+}
+
+.contact-us ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-us ul li {
+    margin-bottom: 5px;
+}
+
+.contact-us a {
+    color: var(--primary-color);
+}
+
+.contact-us a:hover {
+    color: var(--accent-color);
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--bg-dark);
+    color: var(--text-color-light);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.main-footer .social-links a {
+    color: var(--text-color-light);
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.main-footer .social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--bg-dark);
+        position: absolute;
+        top: 70px; /* Adjust based on header height */
+        left: 0;
+        padding-bottom: 10px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .main-nav .nav-list {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-nav .nav-list li {
+        margin: 0;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .main-nav .nav-list li:last-child {
+        border-bottom: none;
+    }
+
+    .main-nav .nav-list a {
+        font-size: 1.2em;
+        display: block;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .hero {
+        padding: 80px 0;
+        min-height: 500px;
+    }
+
+    .hero h2 {
+        font-size: 3em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    h2 { font-size: 2.2em; }
+    h3 { font-size: 1.8em; }
+    h4 { font-size: 1.4em; }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .main-header .logo {
+        font-size: 1.5em;
+    }
+}
