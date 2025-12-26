@@ -1,56 +1,36 @@
-# AutoUpdate
-
-A new repository
+# Simple Calculator App
 
 ## About
 
-This repository aims to provide a robust and flexible solution for managing automatic updates in applications or systems. Whether you're building a desktop application, a command-line tool, or a server-side component, AutoUpdate intends to simplify the process of keeping your software up-to-date for your users.
+This repository hosts a simple, interactive calculator application built using HTML, CSS, and JavaScript. It provides basic arithmetic operations (addition, subtraction, multiplication, division) and a clear, user-friendly interface.
 
-## Features (Planned)
+This project was created to demonstrate fundamental web development skills, including DOM manipulation, event handling, and basic application logic in JavaScript, structured with a class-based approach.
 
-*   **Automatic background updates:** Seamlessly download and apply updates without user intervention.
-*   **Manual update checks:** Allow users to manually trigger an update check at their convenience.
-*   **Delta updates:** Efficiently download only the changed parts of your application, reducing bandwidth usage.
-*   **Rollback mechanism:** Provide a way to revert to a previous stable version in case of a failed update.
-*   **Update channels:** Support for different update channels (e.g., stable, beta, nightly) for targeted releases.
-*   **Cross-platform compatibility:** Designed to work across various operating systems (e.g., Windows, macOS, Linux).
-*   **Secure updates:** Implement cryptographic verification of updates to prevent tampering.
-*   **Customizable UI/CLI integration:** Offer flexible integration points for different application types.
+## Features
 
-## Getting Started (Conceptual)
+*   **Basic Arithmetic:** Supports addition, subtraction, multiplication, and division.
+*   **Clear & Delete:** Clear all input or delete the last digit.
+*   **Keyboard Support:** Operate the calculator using your keyboard for numbers, operators, Enter (equals), Backspace (delete), and Escape (clear).
+*   **Modern Design:** Styled with CSS for a clean and visually appealing interface.
 
-While AutoUpdate is currently under development, the envisioned process for integrating it into your application will involve:
+## Technologies Used
 
-1.  **Adding the AutoUpdate library:** Including the AutoUpdate dependency in your project.
-2.  **Configuration:** Specifying your update server URL, application ID, and release channel.
-3.  **Initiating update checks:** Calling a simple API method to trigger background or manual update checks.
-4.  **Handling update events:** Subscribing to events to display progress, notify users, or handle update failures.
+*   **HTML:** For structuring the calculator layout with display and buttons.
+*   **CSS:** For styling the calculator grid, buttons, and output display for a modern look.
+*   **JavaScript:** Implements the core calculator logic using a class, handling number input, operations, clear, delete, computation, and display updates, including keyboard support.
 
-More detailed instructions will be provided as the project progresses.
+## How to Use
 
-## Roadmap
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/AutoUpdate.git
+    cd AutoUpdate
+    ```
+2.  **Open `index.html`:** Simply open the `index.html` file in your web browser. The calculator will be immediately accessible.
 
-The development of AutoUpdate will proceed in phases:
+## Future Enhancements (Planned Improvements)
 
-*   **Phase 1: Core Update Logic (Current Focus)**
-    *   Basic download and installation mechanism.
-    *   Version comparison and update detection.
-    *   Initial security checks.
-*   **Phase 2: Advanced Features**
-    *   Delta updates.
-    *   Rollback functionality.
-    *   Update channels.
-*   **Phase 3: Platform Integrations & Utilities**
-    *   Specific integrations for desktop environments (e.g., system tray icons).
-    *   CLI tools for server-side management.
-    *   Comprehensive testing across target platforms.
-
-## Contributing
-
-We welcome contributions to AutoUpdate! As this project is in its early stages, here are some ways you can help:
-
-*   **Feedback and Ideas:** Share your thoughts on planned features, potential use cases, or missing functionalities.
-*   **Documentation:** Help refine and expand the project documentation.
-*   **Code (Future):** Once the core architecture is stable, we'll welcome code contributions for features, bug fixes, and platform-specific implementations.
-
-Please refer to our (future) `CONTRIBUTING.md` for more detailed guidelines.
+*   Implement more advanced mathematical functions (e.g., square root, percentage, trigonometry).
+*   Improve error handling for edge cases like division by zero.
+*   Enhance UI/UX with themes or more sophisticated animations.
+*   Add unit tests for the calculator logic.
